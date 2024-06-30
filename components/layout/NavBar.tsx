@@ -1,8 +1,8 @@
 import Link from 'next/link'
 const NavBar: React.FC = () => {
   return (
-    <nav className='p-3 bg-orange-100 shadow-lg'>
-      <div className='flex justify-between items-center text-black'>
+    <nav className='p-3 bg-neutral-950 shadow-lg text-white z-20'>
+      <div className='flex justify-between items-center'>
         <h1>
           <Link className='text-3xl font-bold' href='/'>
             LuvFitness

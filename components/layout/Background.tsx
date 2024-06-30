@@ -1,7 +1,7 @@
 import React from 'react'
-import { HeaderProps } from '@/interfaces/HeaderProps'
+import { IntroProps } from '@/interfaces/IntroProps'
 
-const Background: React.FC<HeaderProps> = ({ children }) => {
+const Background: React.FC<IntroProps> = ({ children }) => {
   return <div className='bg-neutral-950 relative z-10'>{children}</div>
 }
 

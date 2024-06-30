@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-export default function Introduction() {
+const Introduction: React.FC = () => {
   return (
     <section className='flex justify-between p-6 size-9/12 w-full h-full bg-gradient-to-b from-transparent via-neutral-800 to-neutral-900 mt-6 text-white'>
       <div>
@@ -23,3 +23,5 @@ export default function Introduction() {
     </section>
   )
 }
+
+export default Introduction

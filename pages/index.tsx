@@ -1,16 +1,35 @@
 import React from 'react'
-import { NextPage } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 import Background from '@/components/layout/Background'
 import Introduction from '@/components/Introduction'
-import Featrues from '@/components/Featrues/Featrues'
+import Features from '@/components/Features/Features'
+import { FeatureProps } from '@/interfaces/featureProps'
+import featrueAPI from '@/api/featuresAPI'
 
-const HomePage: NextPage = () => {
+interface HomePageProps {
+  features: FeatureProps[]
+}
+
+const HomePage: NextPage<HomePageProps> = ({ features }) => {
   return (
     <Background>
       <Introduction />
-      <Featrues />
+      <Features features={features} />
     </Background>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  // Validate the data
+  const features: FeatureProps[] = featrueAPI.filter(
+    (feature) => feature !== undefined
+  )
+
+  return {
+    props: {
+      features,
+    },
+  }
 }
 
 export default HomePage
